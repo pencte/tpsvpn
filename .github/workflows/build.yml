@@ -9,23 +9,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # 1. Ambil repo
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Set up JDK
+    # 2. SET PERMISSION DI SINI 🔥
+    - name: Kasih izin gradlew
+      run: chmod +x gradlew
+
+    # 3. Setup Java
+    - name: Setup JDK
       uses: actions/setup-java@v3
       with:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Grant permission
-      run: chmod +x gradlew
-
+    # 4. Build APK
     - name: Build APK
       run: ./gradlew assembleDebug
 
+    # 5. Upload hasil
     - name: Upload APK
       uses: actions/upload-artifact@v3
       with:
-        name: app-debug
+        name: TerorismePS
         path: app/build/outputs/apk/debug/app-debug.apk
