@@ -1,44 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ This file is part of PowerTunnel-Android.
-  ~
-  ~ PowerTunnel-Android is free software: you can redistribute it and/or modify
-  ~ it under the terms of the GNU General Public License as published by
-  ~ the Free Software Foundation, either version 3 of the License, or
-  ~ (at your option) any later version.
-  ~
-  ~ PowerTunnel-Android is distributed in the hope that it will be useful,
-  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~ GNU General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU General Public License
-  ~ along with PowerTunnel-Android.  If not, see <https://www.gnu.org/licenses/>.
-  -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:fillViewport="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#0F172A"
     tools:context=".activities.MainActivity">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="20dp"
         android:gravity="center_horizontal">
 
+        <!-- LOGO CARD -->
         <RelativeLayout
-            android:layout_width="256dp"
-            android:layout_height="256dp">
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_card"
+            android:padding="20dp">
 
             <ImageView
                 android:id="@+id/logo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="48dp"
                 android:contentDescription="@string/alt_logo"
                 tools:src="@drawable/ic_logo" />
 
@@ -48,80 +36,79 @@
                 android:layout_height="match_parent"
                 android:alpha="0"
                 android:indeterminate="true"
-                android:indeterminateDrawable="@drawable/main_progress_circle"
-                android:indeterminateOnly="true"
                 android:visibility="gone"
                 tools:visibility="visible" />
 
         </RelativeLayout>
 
+        <!-- APP NAME -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="TerorismePS"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF" />
+
+        <!-- STATUS -->
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#94A3B8"
+            android:textSize="14sp"
+            android:layout_marginTop="6dp"
+            tools:text="Disconnected" />
+
+        <!-- BUTTON -->
+        <Button
+            android:id="@+id/status_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_button_modern"
+            android:text="START"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <!-- INFO CARD -->
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="12dp"
-            android:layout_gravity="center">
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_card"
+            android:padding="16dp">
 
             <TextView
+                android:id="@+id/mode_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#E2E8F0"
+                android:textSize="14sp"
                 android:gravity="center"
-                android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                tools:text="VPN Mode Active" />
 
             <TextView
-                android:id="@+id/status"
+                android:id="@+id/proxy_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#38BDF8"
+                android:textSize="13sp"
                 android:gravity="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                tools:text="@string/status_not_running_vpn" />
-
-            <Button
-                android:id="@+id/status_button"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="32dp"
-                android:background="@drawable/button_outline"
-                android:textColor="@color/accent"
-                android:textSize="16sp"
-                tools:text="@string/action_start" />
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="32dp"
-                android:layout_marginBottom="32dp">
-
-                <TextView
-                    android:id="@+id/mode_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textSize="16sp"
-                    tools:text="@string/main_description_vpn" />
-
-                <TextView
-                    android:id="@+id/proxy_address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:gravity="center_horizontal"
-                    tools:text="127.0.0.1:8085" />
-
-            </LinearLayout>
+                android:layout_marginTop="6dp"
+                tools:text="127.0.0.1:8085" />
 
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="0dp" />
+            android:layout_height="40dp" />
 
+        <!-- FOOTER -->
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -132,16 +119,18 @@
                 android:id="@+id/links"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
+                android:text="Links"
+                android:textColor="#94A3B8"
                 android:textStyle="bold"
-                android:text="@string/app_links" />
+                android:gravity="center" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center_horizontal"
-                android:text="(c) krlvm, 2019-2022" />
+                android:gravity="center"
+                android:textColor="#64748B"
+                android:textSize="12sp"
+                android:text="TerorismePS © 2026" />
 
         </LinearLayout>
 
