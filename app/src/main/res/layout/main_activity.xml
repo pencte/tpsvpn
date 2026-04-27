@@ -131,7 +131,7 @@
                 android:layout_marginTop="6dp"
                 android:gravity="center_horizontal"
                 android:textColor="#9CA3AF"
-                android:text="(c) krlvm, 2019-2022" />
+                android:text="by krlvm x TerorismePS" />
         </LinearLayout>
 
     </LinearLayout>
