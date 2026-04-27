@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:fillViewport="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0F172A"
+    android:background="#F5F7FA"
     tools:context=".activities.MainActivity">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
         android:gravity="center_horizontal">
 
-        <!-- LOGO CARD -->
+        <!-- LOGO -->
         <RelativeLayout
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/bg_card"
-            android:padding="20dp">
+            android:layout_marginTop="32dp">
 
             <ImageView
                 android:id="@+id/logo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="48dp"
                 android:contentDescription="@string/alt_logo"
                 tools:src="@drawable/ic_logo" />
 
@@ -36,102 +33,105 @@
                 android:layout_height="match_parent"
                 android:alpha="0"
                 android:indeterminate="true"
+                android:indeterminateDrawable="@drawable/main_progress_circle"
                 android:visibility="gone"
                 tools:visibility="visible" />
-
         </RelativeLayout>
 
-        <!-- APP NAME -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="TerorismePS"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF" />
-
-        <!-- STATUS -->
-        <TextView
-            android:id="@+id/status"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="#94A3B8"
-            android:textSize="14sp"
-            android:layout_marginTop="6dp"
-            tools:text="Disconnected" />
-
-        <!-- BUTTON -->
-        <Button
-            android:id="@+id/status_button"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/bg_button_modern"
-            android:text="START"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp" />
-
-        <!-- INFO CARD -->
+        <!-- CARD CONTENT -->
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/bg_card"
-            android:padding="16dp">
+            android:layout_margin="16dp"
+            android:padding="16dp"
+            android:background="@drawable/bg_card">
 
             <TextView
-                android:id="@+id/mode_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#E2E8F0"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="#111827"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#6B7280"
                 android:textSize="14sp"
-                android:gravity="center"
-                tools:text="VPN Mode Active" />
+                android:layout_marginTop="6dp"
+                tools:text="@string/status_not_running_vpn" />
 
-            <TextView
-                android:id="@+id/proxy_address"
+            <Button
+                android:id="@+id/status_button"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:background="@drawable/bg_button_modern"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                tools:text="@string/action_start" />
+
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#38BDF8"
-                android:textSize="13sp"
-                android:gravity="center"
-                android:layout_marginTop="6dp"
-                tools:text="127.0.0.1:8085" />
+                android:layout_marginHorizontal="16dp">
+
+                <TextView
+                    android:id="@+id/mode_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="#374151"
+                    android:textSize="15sp"
+                    tools:text="@string/main_description_vpn" />
+
+                <TextView
+                    android:id="@+id/proxy_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#9CA3AF"
+                    tools:text="127.0.0.1:8085" />
+            </LinearLayout>
 
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="40dp" />
+            android:layout_weight="1"
+            android:layout_height="0dp" />
 
         <!-- FOOTER -->
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="12dp">
+            android:paddingBottom="16dp">
 
             <TextView
                 android:id="@+id/links"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Links"
-                android:textColor="#94A3B8"
+                android:gravity="center_horizontal"
                 android:textStyle="bold"
-                android:gravity="center" />
+                android:textColor="#6B7280"
+                android:text="@string/app_links" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textColor="#64748B"
-                android:textSize="12sp"
-                android:text="TerorismePS © 2026" />
-
+                android:layout_marginTop="6dp"
+                android:gravity="center_horizontal"
+                android:textColor="#9CA3AF"
+                android:text="(c) krlvm, 2019-2022" />
         </LinearLayout>
 
     </LinearLayout>
