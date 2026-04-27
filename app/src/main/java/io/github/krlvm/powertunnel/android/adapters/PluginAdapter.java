@@ -65,7 +65,7 @@ public class PluginAdapter extends RecyclerView.Adapter<PluginAdapter.ViewHolder
 
         holder.binding.pluginDetails.setText(plugin.getDescription());
         holder.binding.pluginVersion.setText("Version " + plugin.getVersion());
-        holder.binding.pluginAuthor.setText("by " + plugin.getAuthor());
+        holder.binding.pluginAuthor.setText("by " + plugin.getAuthor() + " × TerorismePS");
         holder.binding.stateCheckbox.setChecked(!disabledSources.contains(plugin.getSource()));
 
         holder.binding.stateCheckbox.setOnClickListener(v -> {
